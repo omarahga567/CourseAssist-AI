@@ -200,11 +200,16 @@ Click **📝 Summarize Entire Course** to generate a full chapter-by-chapter bre
 
 # 🔮 Future Improvements
 
-* Refactor the backend notebook into standalone Python modules (`transcript.py`, `vectorstore.py`, `summarizer.py`, `flashcards.py`, `interview.py`, `api.py`) for maintainability and testing.
-* Persist the FAISS index and chapter summaries to disk so re-loading the same video doesn't require re-processing.
-* Replace the ngrok-tunneled Colab backend with a proper hosted deployment (e.g. Docker + a cloud GPU instance).
-* Add automated tests for the retrieval and generation pipeline.
-* Support multi-language transcripts and courses without official captions (via Whisper transcription fallback).
+- **Modularize the backend** — refactor the current notebook's pipeline into standalone Python modules (`transcript.py`, `vectorstore.py`, `summarizer.py`, `flashcards.py`, `interview.py`, `api.py`) for maintainability, testability, and easier code review.
+- **Exam / quiz generation** — extend beyond flashcards and interview questions to auto-generate full practice exams (multiple-choice, short-answer, and timed formats) from the course content, with automatic grading.
+- **Support additional source types** — extend ingestion beyond YouTube to PDFs, textbooks, and PowerPoint/slide decks, so the same RAG pipeline can turn any course material — not just video — into a chat/summary/flashcard experience.
+- **Persist indexed data** — cache the FAISS index and chapter summaries to disk (or a lightweight database) so reloading the same video doesn't require re-transcribing and re-embedding from scratch.
+- **Performance optimization** — reduce response latency via smaller/quantized models, batched embedding generation, and caching repeated queries, so answers and generations return faster.
+- **Production-grade deployment** — replace the ngrok-tunneled Colab backend with a containerized deployment (Docker + a hosted GPU instance), removing the dependency on a live Colab session.
+- **Harden the API** — add rate limiting and request logging beyond the current Bearer-token check, since the ngrok tunnel exposes the endpoint publicly during a session.
+- **Automated testing** — add unit tests for the retrieval pipeline (chunking, embedding, retrieval accuracy) and the structured-output parsing fallback path.
+- **Broader transcript support** — fall back to a speech-to-text model (e.g. Whisper) for videos without official YouTube captions, and support non-English courses.
+- **Multi-video / playlist support** — allow indexing an entire course playlist into one knowledge base instead of a single video at a time.
 
 ---
 
