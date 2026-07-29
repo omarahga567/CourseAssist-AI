@@ -162,13 +162,27 @@ You're now ready to load a course video and use the app.
 
 # 🚀 Usage
 
-1. Launch the Streamlit app and connect it to your running backend (see Installation).
-2. Paste a YouTube course URL in the **Load Your Course Video** box and click **Load Video**.
-3. Once indexed, use the tabs:
-   - **💬 Chat** — ask questions grounded in the video content.
-   - **🗂️ Flashcards** — generate study flashcards per chapter.
-   - **💼 Interview Questions** — generate practice questions with sample answers.
-   - **📖 Course Summary** — generate and download a full chaptered summary.
+### 1. Load a course
+Once both the backend (notebook) and frontend (Streamlit) are running and connected (see Installation), paste a YouTube course URL into the **Load Your Course Video** field and click **🚀 Load Video**. This transcribes the video, builds the FAISS index, and unlocks the four feature tabs.
+
+### 2. 💬 Chat
+Ask a question about the course in plain language. Each answer comes with:
+- A confidence badge (🟢 High / 🟡 Medium / 🔴 Low)
+- The exact source timestamp it was pulled from
+- Topic tags and suggested follow-up questions you can click to continue the conversation
+
+If a question falls outside the course content, the assistant says so explicitly and adds an advisory instead of presenting a guess as fact.
+
+### 3. 🗂️ Flashcards
+Choose how many cards you want generated per chapter (3–10), then click **✨ Generate Flashcards**. Each card expands to reveal its definition — useful for quick review sessions.
+
+### 4. 💼 Interview Questions
+Choose how many questions per chapter (3–10), then click **✨ Generate Questions**. Each question expands to show a full sample answer, generated from the course material.
+
+### 5. 📖 Course Summary
+Click **📝 Summarize Entire Course** to generate a full chapter-by-chapter breakdown of the video. The result can be downloaded as a single Markdown file for offline review.
+
+> **Note:** Flashcards and Interview Questions both require a course summary first — if you haven't generated one yet, the app will automatically run summarization before building your cards/questions.
 
 ---
 
