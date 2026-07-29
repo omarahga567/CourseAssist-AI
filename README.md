@@ -42,10 +42,13 @@ The project is split into two parts:
 # ✨ Features
 
 ### 💬 Grounded Q&A Chat
-Ask natural-language questions about the video and get answers retrieved directly from the transcript — not generated from general knowledge. Every answer includes:
+Ask natural-language questions about the video and get answers retrieved directly from the transcript — not generated from general knowledge. The LLM's response is constrained to a strict schema via **LangChain's `StructuredOutputParser`**, so every answer reliably includes:
 - A **confidence badge** (High / Medium / Low) so you know how well-supported the answer is
-- The **source location** in the video the answer was pulled from
+- The **source timestamp range** in the video the answer was pulled from
 - **Topic tags** and suggested follow-up questions to keep exploring
+- An explicit flag when a question falls outside the course content, with an advisory to verify independently rather than presenting a guess as fact
+
+If the model ever produces malformed output, a fallback response is returned instead of crashing the request — the app degrades gracefully rather than failing silently.
 
 ### 📖 Chapter-by-Chapter Summarization
 Long courses are automatically split into hour-based chapters. Each chapter is summarized using a **map-reduce pipeline** — smaller sections are summarized individually first, then combined into a coherent chapter-level summary — so summary quality doesn't degrade on long videos. The full course summary is downloadable as Markdown.
