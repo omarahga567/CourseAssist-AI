@@ -1,4 +1,7 @@
 # 🚀 [Tips Hindawi](https://www.tipshindawi.com/) Challenge (June–July) 2026
+# 🎓 CourseAssist AI
+
+### An AI-powered RAG assistant that turns any YouTube course into an interactive study tool — chat, summaries, flashcards & interview prep.
 
 > 🏆 This repository is my official submission for the [ **Tips Hindawi** ](https://www.tipshindawi.com/) **Challenge (June–July) 2026**.
 
@@ -6,9 +9,9 @@
 
 | Field            | Value                                |
 | ---------------- | ------------------------------------ |
-| Full Name        | *[Your Full Name]*                   |
+| Full Name        | *[Omar Ahmed Gamal]*                   |
 | Project Name     | CourseAssist AI                      |
-| GitHub Username  | *[your-github-username]*             |
+| GitHub Username  | *[omarahga567]*             |
 | Challenge Batch  | June–July 2026                       |
 | Training Program | Large Language Models (LLMs) Program |
 | Organization     | [**Edrak for Ai**](https://edrak4ai.com/en) |
