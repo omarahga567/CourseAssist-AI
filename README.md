@@ -22,7 +22,7 @@
 
 # 📖 Project Overview
 
-Watching a multi-hour course video and trying to retain everything in it is inefficient — learners either take manual notes or repeatedly rewatch sections to find what they need. **CourseAssist AI** solves this by turning any YouTube course video into a searchable, interactive knowledge base.
+  Watching a multi-hour course video and trying to retain everything in it is inefficient — learners either take manual notes or repeatedly rewatch sections to find what they need. **CourseAssist AI** solves this by turning any YouTube course video into a searchable, interactive knowledge base.
 
 Simply paste a video URL, and the system transcribes it, splits it into chapters, and builds a vector index of the content. From there, learners can:
 
