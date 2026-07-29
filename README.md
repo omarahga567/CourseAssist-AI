@@ -120,33 +120,43 @@ CourseAssist-AI/
 
 # ⚙️ Installation
 
+CourseAssist AI runs as two separate pieces: a **GPU-backed backend** (notebook) and a **local frontend** (Streamlit). You need both running to use the app.
+
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-github-username>/CourseAssist-AI.git
+git clone https://github.com/omarahga567/CourseAssist-AI.git
 cd CourseAssist-AI
 ```
 
-### 2. Backend (notebook)
-The backend needs a GPU-backed environment (Google Colab recommended, or a local machine with CUDA):
-1. Open `notebook/CourseAssist_AI_Backend.ipynb` in Colab or Jupyter.
-2. Set your Hugging Face and ngrok tokens as environment variables / Colab secrets — **never hardcode them in the notebook**:
-   ```python
+### 2. Start the backend (Google Colab recommended)
+The backend loads an LLM and embedding model, so a GPU environment is strongly recommended.
+
+1. Open `notebook/CourseAssist_AI_Backend.ipynb` in [Google Colab](https://colab.research.google.com/) (or a local Jupyter environment with CUDA).
+2. Set your credentials as environment variables or Colab secrets — **never hardcode tokens in the notebook**:
+```python
    import os
    os.environ["HF_TOKEN"] = "<your-huggingface-token>"
    os.environ["NGROK_TOKEN"] = "<your-ngrok-authtoken>"
    os.environ["API_KEY"] = "<choose-a-secret-api-key>"
-   ```
-3. Run all cells. The last cell starts the FastAPI server and prints a public ngrok URL — copy it.
+```
+3. Run all cells in order. The final cell starts the FastAPI server and prints a public ngrok URL (e.g. `https://xxxx.ngrok-free.app`) — copy it, you'll need it in the next step.
 
-### 3. Frontend (Streamlit app)
+### 3. Start the frontend (locally)
 ```bash
 python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # macOS/Linux
+
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-In the sidebar, paste the ngrok URL from the backend and the API key you set, then load a course video.
+### 4. Connect frontend to backend
+In the Streamlit sidebar:
+- **API / Ngrok URL** → paste the URL printed by the notebook in Step 2
+- **API Key** → the same value you set as `API_KEY` in Step 2
+
+You're now ready to load a course video and use the app.
 
 ---
 
