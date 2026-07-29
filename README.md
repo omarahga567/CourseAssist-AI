@@ -41,13 +41,26 @@ The project is split into two parts:
 
 # ✨ Features
 
-* 💬 **Contextual Q&A Chat** — Ask natural-language questions about the video; answers are retrieved from the transcript (RAG), with a confidence badge, source timestamp/topic tags, and suggested follow-up questions.
-* 📖 **Chapter-by-Chapter Summarization** — Splits long transcripts into hour-based chapters and produces a structured, map-reduce summary of the entire course.
-* 🗂️ **Auto-Generated Flashcards** — Term/definition flashcards generated per chapter, with automatic deduplication.
-* 💼 **Interview Question Generator** — Produces interview-style practice questions with sample answers, derived from the course material.
-* 🔐 **Secured API** — FastAPI backend endpoints protected with Bearer-token authentication.
-* 🎨 **Polished Streamlit GUI** — Tabbed dashboard (Chat / Flashcards / Interview Questions / Summary) with a custom dark theme.
+### 💬 Grounded Q&A Chat
+Ask natural-language questions about the video and get answers retrieved directly from the transcript — not generated from general knowledge. Every answer includes:
+- A **confidence badge** (High / Medium / Low) so you know how well-supported the answer is
+- The **source location** in the video the answer was pulled from
+- **Topic tags** and suggested follow-up questions to keep exploring
 
+### 📖 Chapter-by-Chapter Summarization
+Long courses are automatically split into hour-based chapters. Each chapter is summarized using a **map-reduce pipeline** — smaller sections are summarized individually first, then combined into a coherent chapter-level summary — so summary quality doesn't degrade on long videos. The full course summary is downloadable as Markdown.
+
+### 🗂️ Auto-Generated Flashcards
+Generates term/definition flashcards directly from the chapter summaries, with automatic deduplication so you don't get repeated concepts across chapters. Card count per chapter is adjustable.
+
+### 💼 Interview Question Generator
+Produces interview-style practice questions with model sample answers, grounded in the actual course content — useful for turning a course into interview prep, not just study material.
+
+### 🔐 Secured, Stateless API
+All backend endpoints are protected with **Bearer-token authentication**, so the FastAPI service isn't left open when tunneled publicly through ngrok.
+
+### 🎨 Polished, Tabbed Interface
+A custom dark-themed Streamlit dashboard with dedicated tabs for Chat, Flashcards, Interview Questions, and Summary — built for actual daily use, not just a demo script.
 ---
 
 # 🛠️ Technologies Used
