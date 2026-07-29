@@ -20,7 +20,18 @@
 
 # 📖 Project Overview
 
-**CourseAssist AI** is an AI-powered study companion that turns any YouTube course video into an interactive learning experience. It uses a Retrieval-Augmented Generation (RAG) pipeline to transcribe a video, index it into a vector database, and let a learner chat with the course content, generate chapter-by-chapter summaries, auto-build flashcards, and practice with interview-style questions — all grounded in what was actually said in the video.
+# 📖 Project Overview
+
+Watching a multi-hour course video and trying to retain everything in it is inefficient — learners either take manual notes or repeatedly rewatch sections to find what they need. **CourseAssist AI** solves this by turning any YouTube course video into a searchable, interactive knowledge base.
+
+Simply paste a video URL, and the system transcribes it, splits it into chapters, and builds a vector index of the content. From there, learners can:
+
+- **Ask direct questions** and receive answers grounded in what was actually said in the video — complete with source timestamps and a confidence indicator, not hallucinated guesses
+- **Get an automatic chapter-by-chapter summary** of the entire course
+- **Generate flashcards** from the material for spaced-repetition review
+- **Practice with interview-style questions** derived from the course content, complete with sample answers
+
+Under the hood, CourseAssist AI is built as a **Retrieval-Augmented Generation (RAG)** pipeline: transcript extraction → semantic chunking → vector embeddings → FAISS similarity search → LLM-based generation — exposed through a secured FastAPI backend and consumed by a polished Streamlit frontend.
 
 The project is split into two parts:
 - A **backend** (Jupyter/Colab notebook) that handles transcript extraction, chunking, embeddings, the FAISS vector store, LLM inference, and exposes everything through a FastAPI service (tunneled with ngrok for easy demoing).
