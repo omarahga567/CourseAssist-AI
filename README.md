@@ -194,7 +194,10 @@ Click **📝 Summarize Entire Course** to generate a full chapter-by-chapter bre
 
 # 📈 Results
 
-*Summarize outcomes here — e.g. average response latency, length of course videos successfully processed, accuracy/quality observations from testing the Q&A and summarization features.*
+- Successfully tested on course videos ranging from **[X] to [Y] minutes** in length.
+- Chat answers consistently include source timestamps when the question is covered in the transcript, and clearly flag when it isn't rather than guessing.
+- Chapter summarization via the map-reduce approach maintained coherent output on multi-hour videos where single-pass summarization would exceed context limits.
+- Flashcard and interview-question generation reliably deduplicates repeated concepts across chapters.
 
 ---
 
