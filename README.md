@@ -68,22 +68,37 @@ A custom dark-themed Streamlit dashboard with dedicated tabs for Chat, Flashcard
 
 # 🛠️ Technologies Used
 
-**Language & Core:** Python
+# 🛠️ Technologies Used
 
-**RAG / NLP:**
-- [LangChain](https://www.langchain.com/) (`langchain`, `langchain-community`, `langchain-core`, `langchain-huggingface`, `langchain-text-splitters`)
-- [FAISS](https://github.com/facebookresearch/faiss) (`faiss-cpu`) — vector similarity search
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers) & [Sentence-Transformers](https://www.sbert.net/) — embeddings + LLM inference
-- [`youtube-transcript-api`](https://pypi.org/project/youtube-transcript-api/) — transcript extraction
+**Language**
+- Python 3
 
-**Backend:**
-- [FastAPI](https://fastapi.tiangolo.com/) + [Uvicorn](https://www.uvicorn.org/) — REST API
-- [Pyngrok](https://pyngrok.readthedocs.io/) — public tunnel for a Colab-hosted backend
-- [Pydantic](https://docs.pydantic.dev/) — request validation
+**RAG Pipeline / NLP**
 
-**Frontend:**
-- [Streamlit](https://streamlit.io/) — interactive web GUI
-- [Requests](https://requests.readthedocs.io/) — API client
+| Tool | Role |
+|---|---|
+| [LangChain](https://www.langchain.com/) (`langchain`, `langchain-community`, `langchain-core`, `langchain-huggingface`, `langchain-text-splitters`) | Orchestrates the retrieval + generation pipeline, prompt templates, and semantic text chunking |
+| **LangChain `StructuredOutputParser`** | Enforces a strict JSON schema (`ResponseSchema`) on LLM output — confidence, source timestamp, topics, follow-ups — with a safe fallback if parsing fails |
+| [FAISS](https://github.com/facebookresearch/faiss) (`faiss-cpu`) | Vector similarity search — indexes transcript chunks for fast retrieval |
+| [Sentence-Transformers](https://www.sbert.net/) | Generates embeddings for transcript chunks and user queries |
+| [Hugging Face Transformers](https://huggingface.co/docs/transformers) | Loads and runs the LLM used for answering, summarizing, flashcard and interview-question generation |
+| [`youtube-transcript-api`](https://pypi.org/project/youtube-transcript-api/) | Extracts timestamped transcripts directly from YouTube |
+
+**Backend / API**
+
+| Tool | Role |
+|---|---|
+| [FastAPI](https://fastapi.tiangolo.com/) | REST API serving the RAG pipeline to the frontend |
+| [Uvicorn](https://www.uvicorn.org/) | ASGI server running the FastAPI app |
+| [Pydantic](https://docs.pydantic.dev/) | Request/response validation |
+| [Pyngrok](https://pyngrok.readthedocs.io/) | Exposes the Colab-hosted backend via a public URL for the frontend to reach |
+
+**Frontend**
+
+| Tool | Role |
+|---|---|
+| [Streamlit](https://streamlit.io/) | Interactive web GUI — chat, tabs, flashcards, downloads |
+| [Requests](https://requests.readthedocs.io/) | Frontend's HTTP client to call the FastAPI backend |
 
 ---
 
