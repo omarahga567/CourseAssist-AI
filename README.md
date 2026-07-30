@@ -66,7 +66,7 @@ All backend endpoints are protected with **Bearer-token authentication**, so the
 A custom dark-themed Streamlit dashboard with dedicated tabs for Chat, Flashcards, Interview Questions, and Summary — built for actual daily use, not just a demo script.
 ---
 
-# 🛠️ Technologies Used
+
 
 # 🛠️ Technologies Used
 
