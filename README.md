@@ -210,6 +210,14 @@ Click **📝 Summarize Entire Course** to generate a full chapter-by-chapter bre
 
 
 
+https://github.com/user-attachments/assets/0e6997d0-af14-4c4d-a82d-4ed0fe052c88
+
+
+
+
+
+
+
 ---
 
 # 📈 Results
