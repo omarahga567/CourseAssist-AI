@@ -188,7 +188,27 @@ Click **📝 Summarize Entire Course** to generate a full chapter-by-chapter bre
 
 # 📸 Demo
 
-*Add screenshots or a short GIF/video of the app here (e.g. the Chat tab, Flashcards tab, and a sample generated summary).*
+### Load a course
+<img width="1908" height="894" alt="Screenshot 2026-07-31 195947_edited" src="https://github.com/user-attachments/assets/3e419ed3-cbc8-4e33-adbc-352a58e1fbb5" />
+
+### Grounded Q&A Chat
+<img width="1910" height="895" alt="Screenshot 2026-07-31 201219_edited" src="https://github.com/user-attachments/assets/c57de64e-c864-496b-8dc1-cb160b89aefb" />
+
+<img width="988" height="387" alt="Screenshot 2026-07-31 201201_edited" src="https://github.com/user-attachments/assets/6b892cc7-b49e-46de-9e82-4a237b2cb0da" />
+
+### Flashcards
+<img width="1910" height="899" alt="Screenshot 2026-07-31 201025_edited" src="https://github.com/user-attachments/assets/363acab7-fa95-4dde-89e9-0c9fd50160e7" />
+
+### Interview Questions
+<img width="1910" height="898" alt="Screenshot 2026-07-31 201133_edited" src="https://github.com/user-attachments/assets/5ca80669-9d83-410e-8ebd-883262551442" />
+
+### Chapter Summary
+<img width="1910" height="900" alt="Screenshot 2026-07-31 200919_edited" src="https://github.com/user-attachments/assets/52b7b7d2-6922-4940-8046-2f496def0335" />
+
+
+
+
+
 
 ---
 
