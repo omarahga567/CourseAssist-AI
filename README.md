@@ -222,7 +222,7 @@ https://github.com/user-attachments/assets/0e6997d0-af14-4c4d-a82d-4ed0fe052c88
 
 # 📈 Results
 
-- Successfully tested on course videos ranging from **[X] to [Y] minutes** in length.
+- Successfully tested on course videos ranging from 6 to 12 hours in length.
 - Chat answers consistently include source timestamps when the question is covered in the transcript, and clearly flag when it isn't rather than guessing.
 - Chapter summarization via the map-reduce approach maintained coherent output on multi-hour videos where single-pass summarization would exceed context limits.
 - Flashcard and interview-question generation reliably deduplicates repeated concepts across chapters.
